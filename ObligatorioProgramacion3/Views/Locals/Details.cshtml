@@ -1,0 +1,73 @@
+﻿@model ObligatorioProgramacion3.Models.Local
+
+@{
+    ViewData["Title"] = "Details"; // Establece el título de la página en "Details"
+}
+
+<h1>Detalle</h1>
+
+<div>
+    <h4>Local</h4>
+    <hr />
+    <dl class="row">
+        <!-- Muestra el nombre del local -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <!-- Muestra la dirección del local -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Direccion)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Direccion)
+        </dd>
+        <!-- Muestra el teléfono del local -->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefono)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Telefono)
+        </dd>
+        <!-- Muestra el nombre del responsable del local -->
+        <dt class="col-sm-2">
+            Responsable
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Responsable.Nombre)
+        </dd>
+        <!-- Muestra el nombre de la ciudad del local -->
+        <dt class="col-sm-2">
+            Ciudad
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Ciudad.Nombre)
+        </dd>
+        <!-- Muestra la cantidad de máquinas por tipo en el local -->
+        <dt class="col-sm-2">
+            Tipo Máquina
+        </dt>
+        <dd class="col-sm-10">
+            <ul>
+                @{
+                    // Agrupa las máquinas por tipo y cuenta la cantidad de cada tipo
+                    var maquinasAgrupadas = Model.Maquinas
+                    .GroupBy(m => m.TipoMaquina.Nombre)
+                    .Select(g => new { Tipo = g.Key, Cantidad = g.Count() })
+                    .ToList();
+                }
+                @foreach (var grupo in maquinasAgrupadas)
+                {
+                    <li>@grupo.Tipo: @grupo.Cantidad</li> <!-- Muestra el tipo de máquina y la cantidad -->
+                }
+            </ul>
+        </dd>
+    </dl>
+</div>
+<div>
+    <!-- Enlaces para editar el local y volver al índice de locales -->
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Editar</a> |
+    <a asp-action="Index">Volver</a>
+</div>

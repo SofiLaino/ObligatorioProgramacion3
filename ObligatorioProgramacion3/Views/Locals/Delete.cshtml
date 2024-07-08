@@ -1,0 +1,42 @@
+﻿@model ObligatorioProgramacion3.Models.Local
+
+@{
+    ViewData["Title"] = "Delete"; // Establece el título de la página en "Delete"
+}
+
+
+<link rel="stylesheet" href="~/css/locales.css" asp-append-version="true" /> <!-- Enlace al archivo CSS personalizado -->
+
+<h4 class="display-4 text-center">Eliminar Local</h4> <!-- Encabezado principal de la página -->
+<hr />
+<div class="container">
+    <h4>Local</h4> <!-- Subtítulo -->
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre) <!-- Etiqueta para el campo "Nombre" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre) <!-- Muestra el valor del campo "Nombre" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Direccion) <!-- Etiqueta para el campo "Dirección" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Direccion) <!-- Muestra el valor del campo "Dirección" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefono) <!-- Etiqueta para el campo "Teléfono" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Telefono) <!-- Muestra el valor del campo "Teléfono" -->
+        </dd>
+    </dl>
+    <form asp-action="Delete">
+        <!-- Inicia el formulario para eliminar el local -->
+        <input type="hidden" asp-for="Id" /> <!-- Campo oculto para el Id del local -->
+        <div class="form-group text-center mt-5">
+            <input type="submit" value="Eliminar" class="btn btn-principal btn-md" /> <!-- Botón para enviar el formulario y eliminar el local -->
+            <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a> <!-- Enlace para volver a la página de índice -->
+        </div>
+    </form>
+</div>

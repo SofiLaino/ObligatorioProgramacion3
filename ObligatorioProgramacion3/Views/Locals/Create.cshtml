@@ -1,0 +1,79 @@
+﻿@model ObligatorioProgramacion3.Models.Local
+
+@{
+    // Establece el título de la página en "Create"
+    ViewData["Title"] = "Create";
+}
+
+
+<link rel="stylesheet" href="~/css/locales.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Agregar Local</h4> <!-- Encabezado principal de la página -->
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <!-- Resumen de validación -->
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-6">
+                    <!-- Etiqueta para el campo "Nombre" -->
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <!-- Campo de entrada para "Nombre" -->
+                    <input asp-for="Nombre" class="form-control" />
+                    <!-- Mensaje de validación para "Nombre" -->
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <!-- Etiqueta para el campo "Dirección" -->
+                    <label asp-for="Direccion" class="control-label"></label>
+                    <!-- Campo de entrada para "Dirección" -->
+                    <input asp-for="Direccion" class="form-control" />
+                    <!-- Mensaje de validación para "Dirección" -->
+                    <span asp-validation-for="Direccion" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-6">
+                    <!-- Etiqueta para el campo "Teléfono" -->
+                    <label asp-for="Telefono" class="control-label"></label>
+                    <!-- Campo de entrada para "Teléfono" -->
+                    <input asp-for="Telefono" class="form-control" />
+                    <!-- Mensaje de validación para "Teléfono" -->
+                    <span asp-validation-for="Telefono" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <!-- Etiqueta para el campo "Ciudad" -->
+                    <label asp-for="CiudadId" class="control-label"></label>
+                    <!-- Campo de selección para "Ciudad" -->
+                    <select asp-for="CiudadId" class="form-control custom-select" asp-items="ViewBag.Ciudades"></select>
+                    <!-- Mensaje de validación para "Ciudad" -->
+                    <span asp-validation-for="CiudadId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-12">
+                    <!-- Etiqueta para el campo "Responsable" -->
+                    <label asp-for="ResponsableId" class="control-label"></label>
+                    <!-- Campo de selección para "Responsable" -->
+                    <select asp-for="ResponsableId" class="form-control custom-select" asp-items="ViewBag.Responsables"></select>
+                    <!-- Mensaje de validación para "Responsable" -->
+                    <span asp-validation-for="ResponsableId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group text-center mt-4">
+                <!-- Botón para enviar el formulario -->
+                <input type="submit" value="Agregar" class="btn btn-principal btn-md" />
+                <!-- Botón para volver al índice -->
+                <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        // Incluye los scripts de validación
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

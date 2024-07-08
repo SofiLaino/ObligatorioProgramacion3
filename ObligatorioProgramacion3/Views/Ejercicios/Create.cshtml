@@ -1,0 +1,43 @@
+﻿@model ObligatorioProgramacion3.Models.Ejercicio
+
+@{
+    ViewData["Title"] = "Crear"; // Establece el título de la página en "Crear"
+}
+
+<!-- Enlace al archivo CSS personalizado para la vista de ejercicios -->
+<link rel="stylesheet" href="~/css/ejercicios.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center" style="margin-top: 100px;">Agregar Ejercicio</h4> <!-- Título de la sección -->
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Create">
+            <!-- Formulario para crear un nuevo ejercicio -->
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div> <!-- Muestra los errores de validación -->
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="Nombre" class="control-label"></label> <!-- Etiqueta para el campo Nombre -->
+                    <input asp-for="Nombre" class="form-control" /> <!-- Campo de entrada para el nombre -->
+                    <span asp-validation-for="Nombre" class="text-danger"></span> <!-- Muestra errores de validación para el campo Nombre -->
+                </div>
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="Maquina" class="control-label"></label> <!-- Etiqueta para el campo Maquina -->
+                    <select asp-for="MaquinaId" class="form-control custom-select" asp-items="ViewBag.MaquinaId">
+                        <option value="">Ninguna</option> <!-- Opción por defecto para no seleccionar ninguna máquina -->
+                    </select>
+                    <span asp-validation-for="MaquinaId" class="text-danger"></span> <!-- Muestra errores de validación para el campo MaquinaId -->
+                </div>
+            </div>
+            <div class="form-group text-center mt-4">
+                <input type="submit" value="Agregar" class="btn btn-principal btn-md" /> <!-- Botón para enviar el formulario -->
+                <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a> <!-- Enlace para volver a la página de índice -->
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial"); // Incluye los scripts de validación
+    }
+}

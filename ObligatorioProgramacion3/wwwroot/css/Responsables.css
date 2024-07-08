@@ -1,0 +1,144 @@
+﻿body {
+    font-family: 'Raleway', sans-serif; /* Fuente Raleway para todo el cuerpo */
+    margin: 0; /* Elimina el margen predeterminado */
+    padding: 0; /* Elimina el relleno predeterminado */
+    background-color: #2E2533; /* Color de fondo oscuro */
+    color: #7D7D7D; /* Color del texto gris */
+}
+
+.text-center {
+    color: #986EDB; /* Color del texto centrado en lila */
+}
+
+.display-4 {
+    font-weight: 700; /* Negrita para los encabezados */
+    color: #986EDB; /* Color del texto en lila */
+    margin-top: 1.5rem; /* Margen superior ajustado */
+}
+
+a {
+    color: #986EDB; /* Color de los enlaces en lila */
+    text-decoration: none; /* Sin subrayado para los enlaces */
+}
+
+    a:hover {
+        text-decoration: underline; /* Subrayado al pasar el ratón sobre los enlaces */
+    }
+
+    a.text-primary:hover {
+        color: #FFFFFF !important; /* Color blanco al pasar el ratón sobre enlaces principales */
+        text-decoration: underline; /* Subrayado al pasar el ratón */
+    }
+
+.container {
+    max-width: 80%; /* Ancho máximo del contenedor */
+    margin: auto; /* Centra el contenedor */
+    color: white; /* Texto blanco */
+}
+
+h1, h4 {
+    margin-top: 100px; /* Margen superior grande */
+    color: #986EDB; /* Color del texto en lila */
+}
+
+.details-content {
+    margin-top: -20px; /* Ajusta el margen superior para acercar el contenido al título */
+}
+
+.table-container {
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    margin-top: 20px; /* Margen superior */
+}
+
+.table {
+    margin: 0; /* Sin margen para la tabla */
+    width: 100%; /* Ancho completo de la tabla */
+}
+
+.btn-principal {
+    background-color: #986EDB; /* Color de fondo lila */
+    border-color: #986EDB; /* Color del borde lila */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+    .btn-principal:hover {
+        background-color: #4F325C; /* Color de fondo más oscuro al pasar el ratón */
+        border-color: #4F325C; /* Color del borde más oscuro al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-principal:focus, .btn-principal:active {
+        background-color: #7D7D7D; /* Color de fondo gris al enfocar o hacer clic */
+        border-color: #7D7D7D; /* Color del borde gris al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.btn-secondary {
+    background-color: #4F325C; /* Color de fondo más oscuro */
+    border-color: #4F325C; /* Color del borde más oscuro */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+    .btn-secondary:hover {
+        background-color: #7D7D7D; /* Color de fondo gris al pasar el ratón */
+        border-color: #7D7D7D; /* Color del borde gris al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-secondary:focus, .btn-secondary:active {
+        background-color: #986EDB; /* Color de fondo lila al enfocar o hacer clic */
+        border-color: #986EDB; /* Color del borde lila al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.text-primary {
+    color: #986EDB !important; /* Color del texto en lila */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+}
+
+    .text-primary:hover {
+        color: #FFFFFF !important; /* Color del texto en blanco al pasar el ratón */
+        text-decoration: underline !important; /* Subrayado al pasar el ratón */
+    }
+
+.form-row {
+    display: flex; /* Usar flexbox para la disposición */
+    justify-content: space-between; /* Espacio entre los elementos */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Margen inferior entre grupos de formulario */
+    flex: 1; /* Flexbox para que ocupe el espacio disponible */
+    margin-right: 10px; /* Margen derecho entre grupos */
+}
+
+    .form-group:last-child {
+        margin-right: 0; /* Sin margen derecho en el último grupo */
+    }
+
+footer {
+    background-color: #986EDB; /* Color de fondo del pie de página en lila */
+    color: #FFFFFF !important; /* Texto blanco */
+    padding: 10px 0; /* Relleno superior e inferior */
+    text-align: center; /* Texto centrado */
+    width: 100%; /* Ancho completo */
+    border-top: none; /* Sin borde superior */
+    position: absolute; /* Posición absoluta */
+    bottom: 0; /* Posicionado en la parte inferior */
+    left: 0; /* Posicionado en la izquierda */
+}

@@ -1,0 +1,43 @@
+﻿@model ObligatorioProgramacion3.Models.RutinaSocio
+
+@{
+    ViewData["Title"] = "AsignarRutina"; // Establece el título de la página como "Asignar Rutina"
+}
+
+<link rel="stylesheet" href="~/css/socios.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Asignar Rutina</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="AsignarRutina">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div> <!-- Muestra un resumen de validación de errores -->
+            <input type="hidden" asp-for="IdSocio" /> <!-- Campo oculto para el ID del socio -->
+            <div class="form-group mb-4">
+                <label asp-for="IdRutina" class="control-label">Rutina</label>
+                <select asp-for="IdRutina" class="form-control custom-select" asp-items="ViewBag.Rutinas"></select> <!-- Selector de rutina -->
+                <span asp-validation-for="IdRutina" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="Fecha" class="control-label">Fecha</label>
+                <input asp-for="Fecha" class="form-control" type="date" /> <!-- Campo para seleccionar la fecha -->
+                <span asp-validation-for="Fecha" class="text-danger"></span>
+            </div>
+            <div class="form-group mb-4">
+                <label asp-for="Calificacion" class="control-label">Calificación</label>
+                <input asp-for="Calificacion" class="form-control" type="number" step="0.1" min="0" max="10" /> <!-- Campo para la calificación -->
+                <span asp-validation-for="Calificacion" class="text-danger"></span>
+            </div>
+            <div class="form-group text-center mt-4">
+                <input type="submit" value="Asignar" class="btn btn-principal btn-md" /> <!-- Botón para asignar la rutina -->
+                <a asp-action="Index" class="btn btn-secondary btn-md ml-2 align-middle">Volver</a> <!-- Enlace para volver al índice -->
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial"); // Incluye los scripts de validación
+    }
+}

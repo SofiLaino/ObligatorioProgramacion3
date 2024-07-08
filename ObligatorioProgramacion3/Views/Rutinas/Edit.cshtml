@@ -1,0 +1,66 @@
+﻿@model ObligatorioProgramacion3.Models.Rutina
+
+@{
+    ViewData["Title"] = "Edit"; // Establece el título de la página en "Edit"
+}
+
+<link rel="stylesheet" href="~/css/rutinas.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Editar Rutina</h4>
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-row d-flex mb-4">
+                <div class="form-group col-md-6 mb-4">
+                    <!-- Campo de entrada para el nombre de la rutina -->
+                    <label asp-for="Nombre" class="control-label"></label>
+                    <input asp-for="Nombre" class="form-control" />
+                    <span asp-validation-for="Nombre" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6 mb-4">
+                    <!-- Campo de entrada para la descripción de la rutina -->
+                    <label asp-for="Descripcion" class="control-label"></label>
+                    <input asp-for="Descripcion" class="form-control" />
+                    <span asp-validation-for="Descripcion" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row d-flex mb-4">
+                
+                <div class="form-group col-md-6 mb-4">
+                    <!-- Campo de selección para el tipo de rutina -->
+                    <label asp-for="TipoRutinaId" class="control-label">Tipo de Rutina</label>
+                    <select asp-for="TipoRutinaId" class="form-control custom-select" asp-items="ViewBag.TipoRutinaId"></select>
+                    <span asp-validation-for="TipoRutinaId" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group mb-4">
+                <!-- Campo de selección para asignar ejercicios -->
+                <label class="control-label">Asignar Ejercicios</label>
+                <div>
+                    @foreach (var ejercicio in ViewBag.Ejercicios)
+                    {
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" name="selectedEjercicios" value="@ejercicio.Value" @((bool)ejercicio.Selected ? "checked" : "") />
+                            <label class="form-check-label">@ejercicio.Text</label>
+                        </div>
+                    }
+                </div>
+            </div>
+            <div class="form-group text-center mt-4">
+                <!-- Botón para guardar los cambios -->
+                <input type="submit" value="Guardar" class="btn btn-principal btn-md" />
+                <!-- Enlace para volver al índice de rutinas -->
+                <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

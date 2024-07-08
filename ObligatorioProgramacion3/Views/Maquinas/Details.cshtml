@@ -1,0 +1,69 @@
+﻿@model ObligatorioProgramacion3.Models.Maquina
+
+@{
+    ViewData["Title"] = "Details"; // Establece el título de la página en "Details"
+}
+
+<link rel="stylesheet" href="~/css/maquinas.css" asp-append-version="true" />
+
+<h1 class="display-4 text-center">Detalle</h1> <!-- Encabezado principal de la página -->
+
+<div>
+    <h4>Maquina</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre) <!-- Etiqueta para el campo "Nombre" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre) <!-- Valor del campo "Nombre" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCompra) <!-- Etiqueta para el campo "FechaCompra" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaCompra) <!-- Valor del campo "FechaCompra" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PrecioCompra) <!-- Etiqueta para el campo "PrecioCompra" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrecioCompra) <!-- Valor del campo "PrecioCompra" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VidaUtil) <!-- Etiqueta para el campo "VidaUtil" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VidaUtil) <!-- Valor del campo "VidaUtil" -->
+        </dd>
+        <dt class="col-sm-2">
+            Tipo
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.TipoMaquina.Nombre) <!-- Valor del campo "TipoMaquina.Nombre" -->
+        </dd>
+        <dt class="col-sm-2">
+            Local
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LocalAsociado.Nombre) <!-- Valor del campo "LocalAsociado.Nombre" -->
+        </dd>
+        <dt class="col-sm-2">
+            Vida Útil Restante
+        </dt>
+        <dd class="col-sm-10">
+            @ViewBag.VidaUtilRestanteAnios años y @ViewBag.VidaUtilRestanteMeses meses <!-- Valor calculado para la vida útil restante -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Disponible) <!-- Etiqueta para el campo "Disponible" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Disponible) <!-- Valor del campo "Disponible" -->
+        </dd>
+    </dl>
+</div>
+<div class="mb-5">
+    <!-- Añadir clase para margen inferior -->
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-principal">Editar</a> <!-- Botón para editar -->
+    <a asp-action="Index" class="btn btn-secondary">Volver</a> <!-- Botón para volver al índice -->
+</div>

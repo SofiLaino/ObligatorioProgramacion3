@@ -1,0 +1,91 @@
+﻿@model ObligatorioProgramacion3.Models.Socio
+
+@{
+    ViewData["Title"] = "Details"; // Establece el título de la página como "Details"
+}
+
+<link rel="stylesheet" href="~/css/socios.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center mt-4">Detalle del Socio</h4>
+<hr />
+<div class="container mb-5">
+    <div class="details-content">
+        <h4>Socio</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email) <!-- Muestra el nombre del campo Email -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email) <!-- Muestra el valor del campo Email -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nombre) <!-- Muestra el nombre del campo Nombre -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nombre) <!-- Muestra el valor del campo Nombre -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Apellido) <!-- Muestra el nombre del campo Apellido -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Apellido) <!-- Muestra el valor del campo Apellido -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Telefono) <!-- Muestra el nombre del campo Telefono -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Telefono) <!-- Muestra el valor del campo Telefono -->
+            </dd>
+            <dt class="col-sm-2">
+                Tipo <!-- Muestra el nombre del campo Tipo -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TipoSocio.Nombre) <!-- Muestra el valor del campo TipoSocio -->
+            </dd>
+            <dt class="col-sm-2">
+                Local Asociado <!-- Muestra el nombre del campo Local Asociado -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LocalAsociado.Nombre) <!-- Muestra el valor del campo LocalAsociado -->
+            </dd>
+        </dl>
+    </div>
+    <div>
+        <h4>Rutinas Asignadas</h4> <!-- Muestra las rutinas asignadas al socio -->
+        <div class="table-container">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th>Rutina</th>
+                        <th>Fecha</th>
+                        <th>Calificación</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Itera sobre las rutinas asignadas -->
+                    @foreach (var rutinaSocio in Model.RutinasSocios)
+                    {
+                        <tr>
+                            <td>@rutinaSocio.Rutina.Nombre</td> <!-- Muestra el nombre de la rutina -->
+                            <td>@rutinaSocio.Fecha.ToString("dd/MM/yyyy")</td> <!-- Muestra la fecha de la rutina -->
+                            <td>@(rutinaSocio.Calificacion.HasValue ? rutinaSocio.Calificacion.Value.ToString() : "Sin calificación")</td> <!-- Muestra la calificación de la rutina -->
+                            <td>
+                                <a asp-action="EditarCalificacion" asp-route-idSocio="@Model.Id" asp-route-idRutina="@rutinaSocio.IdRutina" class="btn btn-principal btn-sm">Editar Calificación</a> <!-- Enlace para editar la calificación -->
+                                <form asp-action="EliminarRutina" method="post" class="d-inline">
+                                    <input type="hidden" name="idSocio" value="@Model.Id" />
+                                    <input type="hidden" name="idRutina" value="@rutinaSocio.IdRutina" />
+                                    <button type="submit" class="btn btn-danger btn-sm">Eliminar</button> <!-- Botón para eliminar la rutina -->
+                                </form>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="text-center mt-4">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-principal">Editar</a> <!-- Enlace para editar el socio -->
+        <a asp-action="Index" class="btn btn-secondary">Volver</a> <!-- Enlace para volver al índice -->
+    </div>
+</div>

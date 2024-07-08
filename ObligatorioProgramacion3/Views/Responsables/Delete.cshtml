@@ -1,0 +1,39 @@
+﻿@model ObligatorioProgramacion3.Models.Responsable
+
+@{
+    ViewData["Title"] = "Delete"; // Establece el título de la página en "Delete"
+}
+
+<link rel="stylesheet" href="~/css/responsables.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Eliminar Responsable</h4> <!-- Encabezado principal de la página -->
+<hr />
+<div>
+    <h4>Responsable</h4>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre) <!-- Etiqueta para el campo "Nombre" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre) <!-- Muestra el valor del campo "Nombre" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Apellido) <!-- Etiqueta para el campo "Apellido" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Apellido) <!-- Muestra el valor del campo "Apellido" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Telefono) <!-- Etiqueta para el campo "Telefono" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Telefono) <!-- Muestra el valor del campo "Telefono" -->
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" /> <!-- Campo oculto para el Id del responsable -->
+        <input type="submit" value="Eliminar" class="btn btn-principal" /> <!-- Botón para confirmar la eliminación -->
+        <a asp-action="Index" class="btn btn-secondary">Volver</a> <!-- Botón para volver al índice -->
+    </form>
+</div>

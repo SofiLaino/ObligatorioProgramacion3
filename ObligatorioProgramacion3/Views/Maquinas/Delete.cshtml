@@ -1,0 +1,52 @@
+﻿@model ObligatorioProgramacion3.Models.Maquina
+
+@{
+    ViewData["Title"] = "Delete"; // Establece el título de la página en "Delete"
+}
+
+<link rel="stylesheet" href="~/css/maquinas.css" asp-append-version="true" />
+
+<h1 class="display-4 text-center">Eliminar</h1> <!-- Encabezado principal de la página -->
+
+<div>
+    <h4>Maquina</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre) <!-- Etiqueta para el campo "Nombre" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre) <!-- Valor del campo "Nombre" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCompra) <!-- Etiqueta para el campo "FechaCompra" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FechaCompra) <!-- Valor del campo "FechaCompra" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PrecioCompra) <!-- Etiqueta para el campo "PrecioCompra" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PrecioCompra) <!-- Valor del campo "PrecioCompra" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.VidaUtil) <!-- Etiqueta para el campo "VidaUtil" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.VidaUtil) <!-- Valor del campo "VidaUtil" -->
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Disponible) <!-- Etiqueta para el campo "Disponible" -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Disponible) <!-- Valor del campo "Disponible" -->
+        </dd>
+    </dl>
+
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="Id" /> <!-- Campo oculto para el ID de la máquina -->
+        <input type="submit" value="Eliminar" class="btn btn-principal" /> <!-- Botón para eliminar -->
+        <a asp-action="Index" class="btn btn-secondary">Volver</a> <!-- Botón para volver al índice -->
+    </form>
+</div>

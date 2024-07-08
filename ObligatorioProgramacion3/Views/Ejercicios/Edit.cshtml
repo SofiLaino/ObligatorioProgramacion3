@@ -1,0 +1,43 @@
+﻿@model ObligatorioProgramacion3.Models.Ejercicio
+
+@{
+    ViewData["Title"] = "Edit"; // Establece el título de la página en "Editar"
+}
+
+<link rel="stylesheet" href="~/css/ejercicios.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Editar Ejercicio</h4> <!-- Título de la sección -->
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <!-- Formulario para editar el ejercicio -->
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div> <!-- Muestra errores de validación -->
+            <input type="hidden" asp-for="Id" /> <!-- Campo oculto para el ID del ejercicio -->
+            <div class="form-row d-flex mb-4">
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="Nombre" class="control-label"></label> <!-- Etiqueta para el campo Nombre -->
+                    <input asp-for="Nombre" class="form-control" /> <!-- Campo de entrada para el Nombre -->
+                    <span asp-validation-for="Nombre" class="text-danger"></span> <!-- Muestra errores de validación para Nombre -->
+                </div>
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="MaquinaId" class="control-label"></label> <!-- Etiqueta para el campo MaquinaId -->
+                    <select asp-for="MaquinaId" class="form-control" asp-items="ViewBag.MaquinaId">
+                        <option value="">Ninguna</option> <!-- Opción por defecto para seleccionar una máquina -->
+                    </select>
+                    <span asp-validation-for="MaquinaId" class="text-danger"></span> <!-- Muestra errores de validación para MaquinaId -->
+                </div>
+            </div>
+            <div class="form-group text-center mt-5">
+                <input type="submit" value="Guardar" class="btn btn-principal btn-md" /> <!-- Botón para guardar los cambios -->
+                <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a> <!-- Enlace para volver a la página de índice -->
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial"); // Incluye scripts de validación
+    }
+}

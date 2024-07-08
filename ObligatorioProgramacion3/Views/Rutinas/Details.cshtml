@@ -1,0 +1,75 @@
+﻿@model ObligatorioProgramacion3.Models.Rutina
+
+@{
+    ViewData["Title"] = "Details"; // Establece el título de la página en "Details"
+}
+
+<link rel="stylesheet" href="~/css/rutinas.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center mt-4">Detalle de la Rutina</h4>
+<hr />
+<div class="container">
+    <div class="details-content">
+        <h4>Rutina</h4>
+        <dl class="row">
+            <!-- Muestra el nombre de la rutina -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+            <!-- Muestra la descripción de la rutina -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+            <!-- Muestra el promedio de calificación de la rutina -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PromedioCalif)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PromedioCalif)
+            </dd>
+            <!-- Muestra el tipo de la rutina -->
+            <dt class="col-sm-2">
+                Tipo
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TipoRutina.Nombre)
+            </dd>
+            <!-- Muestra los ejercicios asignados a la rutina -->
+            <dt class="col-sm-2">
+                Ejercicios
+            </dt>
+            <dd class="col-sm-10">
+                <ul>
+                    @foreach (var ejercicio in Model.RutinasEjercicios.Select(re => re.Ejercicio))
+                    {
+                        <li>@ejercicio.Nombre</li>
+                    }
+                </ul>
+            </dd>
+            <!-- Muestra los socios asignados a la rutina -->
+            <dt class="col-sm-2">
+                Socios
+            </dt>
+            <dd class="col-sm-10">
+                <ul>
+                    @foreach (var socio in Model.RutinasSocios.Select(rs => rs.Socio))
+                    {
+                        <li>@socio.Nombre</li>
+                    }
+                </ul>
+            </dd>
+        </dl>
+    </div>
+    <div class="text-center">
+        <!-- Enlace para editar la rutina -->
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-principal">Editar</a>
+        <!-- Enlace para volver al índice de rutinas -->
+        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    </div>
+</div>

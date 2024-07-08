@@ -1,0 +1,60 @@
+﻿@model ObligatorioProgramacion3.Models.Socio
+
+@{
+    ViewData["Title"] = "Delete"; // Establece el título de la página como "Delete"
+}
+
+<link rel="stylesheet" href="~/css/socios.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Eliminar Socio</h4>
+<hr />
+<div class="container">
+    <div class="details-content">
+        <h4>Socio</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email) <!-- Muestra el nombre del campo Email -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email) <!-- Muestra el valor del campo Email -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nombre) <!-- Muestra el nombre del campo Nombre -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nombre) <!-- Muestra el valor del campo Nombre -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Apellido) <!-- Muestra el nombre del campo Apellido -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Apellido) <!-- Muestra el valor del campo Apellido -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Telefono) <!-- Muestra el nombre del campo Telefono -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Telefono) <!-- Muestra el valor del campo Telefono -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TipoSocio) <!-- Muestra el nombre del campo TipoSocio -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TipoSocio.Nombre) <!-- Muestra el valor del campo TipoSocio -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.LocalAsociado) <!-- Muestra el nombre del campo LocalAsociado -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.LocalAsociado.Nombre) <!-- Muestra el valor del campo LocalAsociado -->
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" /> <!-- Campo oculto para el ID del socio -->
+            <div class="form-group text-center">
+                <input type="submit" value="Eliminar" class="btn btn-principal" /> <!-- Botón para eliminar el socio -->
+                <a asp-action="Index" class="btn btn-secondary ml-2">Volver</a> <!-- Enlace para volver al índice -->
+            </div>
+        </form>
+    </div>
+</div>

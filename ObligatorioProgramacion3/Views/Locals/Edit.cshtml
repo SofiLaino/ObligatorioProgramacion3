@@ -1,0 +1,59 @@
+﻿@model ObligatorioProgramacion3.Models.Local
+
+@{
+    ViewData["Title"] = "Edit"; // Establece el título de la página en "Edit"
+}
+
+<link rel="stylesheet" href="~/css/locales.css" asp-append-version="true" /> <!-- Enlace al archivo CSS personalizado -->
+
+<h4 class="display-4 text-center mt-4">Editar Local</h4> <!-- Encabezado principal de la página -->
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div> <!-- Resumen de validación -->
+            <input type="hidden" asp-for="Id" /> <!-- Campo oculto para el ID del local -->
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-6">
+                    <label asp-for="Nombre" class="control-label"></label> <!-- Etiqueta para el campo "Nombre" -->
+                    <input asp-for="Nombre" class="form-control" /> <!-- Campo de entrada para "Nombre" -->
+                    <span asp-validation-for="Nombre" class="text-danger"></span> <!-- Mensaje de validación para "Nombre" -->
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Direccion" class="control-label"></label> <!-- Etiqueta para el campo "Dirección" -->
+                    <input asp-for="Direccion" class="form-control" /> <!-- Campo de entrada para "Dirección" -->
+                    <span asp-validation-for="Direccion" class="text-danger"></span> <!-- Mensaje de validación para "Dirección" -->
+                </div>
+            </div>
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-6">
+                    <label asp-for="Telefono" class="control-label"></label> <!-- Etiqueta para el campo "Teléfono" -->
+                    <input asp-for="Telefono" class="form-control" /> <!-- Campo de entrada para "Teléfono" -->
+                    <span asp-validation-for="Telefono" class="text-danger"></span> <!-- Mensaje de validación para "Teléfono" -->
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="CiudadId" class="control-label"></label> <!-- Etiqueta para el campo "Ciudad" -->
+                    <select asp-for="CiudadId" class="form-control custom-select" asp-items="ViewBag.Ciudades"></select> <!-- Campo de selección para "Ciudad" -->
+                    <span asp-validation-for="CiudadId" class="text-danger"></span> <!-- Mensaje de validación para "Ciudad" -->
+                </div>
+            </div>
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-12">
+                    <label asp-for="ResponsableId" class="control-label"></label> <!-- Etiqueta para el campo "Responsable" -->
+                    <select asp-for="ResponsableId" class="form-control custom-select" asp-items="ViewBag.Responsables"></select> <!-- Campo de selección para "Responsable" -->
+                    <span asp-validation-for="ResponsableId" class="text-danger"></span> <!-- Mensaje de validación para "Responsable" -->
+                </div>
+            </div>
+            <div class="form-group text-center mt-4">
+                <input type="submit" value="Guardar" class="btn btn-principal btn-md" /> <!-- Botón para enviar el formulario -->
+                <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a> <!-- Botón para volver al índice -->
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial"); // Script para la validación del formulario
+    }
+}

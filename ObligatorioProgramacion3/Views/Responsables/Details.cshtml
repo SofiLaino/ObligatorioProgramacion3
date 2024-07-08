@@ -1,0 +1,45 @@
+﻿@model ObligatorioProgramacion3.Models.Responsable
+
+@{
+    ViewData["Title"] = "Details"; // Establece el título de la página en "Details"
+}
+
+<link rel="stylesheet" href="~/css/responsables.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center mt-4">Detalle del Responsable</h4> <!-- Encabezado principal de la página -->
+<hr />
+<div class="container">
+    <div class="details-content">
+        <h4>Responsable</h4>
+        <dl class="row">
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nombre) <!-- Etiqueta para el campo "Nombre" -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nombre) <!-- Muestra el valor del campo "Nombre" -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Apellido) <!-- Etiqueta para el campo "Apellido" -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Apellido) <!-- Muestra el valor del campo "Apellido" -->
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Telefono) <!-- Etiqueta para el campo "Telefono" -->
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Telefono) <!-- Muestra el valor del campo "Telefono" -->
+            </dd>
+            <dt class="col-sm-2">
+                Local 
+             </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Local.Nombre)
+            </dd>
+        </dl>
+    </div>
+    <div class="text-center">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-principal">Editar</a> <!-- Botón para editar el responsable -->
+        <a asp-action="Index" class="btn btn-secondary">Volver</a> <!-- Botón para volver al índice -->
+    </div>
+</div>

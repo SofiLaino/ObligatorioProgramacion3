@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ObligatorioProgramacion3.Models.Rutina>
+
+@{
+    ViewData["Title"] = "Index"; // Establece el título de la página en "Index"
+}
+
+<link rel="stylesheet" href="~/css/rutinas.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Rutinas</h4>
+
+<p>
+    <!-- Enlace para agregar una nueva rutina -->
+    <a asp-action="Create" class="btn btn-principal">Agregar</a>
+</p>
+
+<form method="get" asp-action="Index">
+    <h6>Calcular promedio calificación según fechas:</h6>
+    <div class="form-row align-items-end">
+        <div class="form-group col-md-3">
+            <label for="fechaInicio">Fecha Inicio:</label>
+            <input type="date" id="fechaInicio" name="fechaInicio" class="form-control" />
+        </div>
+        <div class="form-group col-md-3">
+            <label for="fechaFin">Fecha Fin:</label>
+            <input type="date" id="fechaFin" name="fechaFin" class="form-control" />
+        </div>
+        <div class="form-group col-md-2">
+            <input type="submit" value="Filtrar" class="btn btn-principal btn-md" /> <!-- Botón para filtrar los resultados -->
+        </div>
+        <div class="form-group col-md-2">
+            <input type="submit" formaction="/ruta/deshacer" value="Deshacer" class="btn btn-secondary btn-md" /> <!-- Botón para deshacer el filtro -->
+        </div>
+    </div>
+</form>
+
+<div class="table-container">
+    <table class="table table-striped table-dark">
+        <thead>
+            <tr>
+                <!-- Encabezados de la tabla de rutinas -->
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
+                <th>@Html.DisplayNameFor(model => model.PromedioCalif)</th>
+                <th>Tipo</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <!-- Muestra el nombre de la rutina -->
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td>
+                    <!-- Muestra la descripción de la rutina -->
+                    <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
+                    <!-- Muestra el promedio de calificación de la rutina -->
+                    <td>@item.PromedioCalif?.ToString("0.00")</td>
+                    <!-- Muestra el tipo de la rutina -->
+                    <td>@Html.DisplayFor(modelItem => item.TipoRutina.Nombre)</td>
+                    <td class="action-buttons">
+                        <!-- Enlaces para editar, ver detalles y eliminar la rutina -->
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="text-primary">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="text-primary">Ver</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-primary">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

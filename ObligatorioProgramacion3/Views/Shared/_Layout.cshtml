@@ -1,0 +1,107 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título de la página -->
+    <title>@ViewData["Title"] - Gimnasio 24</title>
+    <!-- Enlaces a hojas de estilo -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/layout.css" asp-append-version="true" />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <!-- Barra de navegación -->
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-transparent mb-0">
+            <div class="container-fluid">
+                <span class="navbar-brand">Gimnasio 24</span>
+                <!-- Botón de menú para pantallas pequeñas -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <!-- Enlaces de navegación con clase activa condicional -->
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["action"].ToString() == "Index" && ViewContext.RouteData.Values["controller"].ToString() == "Home" ? "active" : "")" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Ejercicios" ? "active" : "")" asp-area="" asp-controller="Ejercicios" asp-action="Index">Ejercicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Locals" ? "active" : "")" asp-area="" asp-controller="Locals" asp-action="Index">Locales</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Maquinas" ? "active" : "")" asp-area="" asp-controller="Maquinas" asp-action="Index">Maquinas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Responsables" ? "active" : "")" asp-area="" asp-controller="Responsables" asp-action="Index">Responsables</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Rutinas" ? "active" : "")" asp-area="" asp-controller="Rutinas" asp-action="Index">Rutinas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link @(ViewContext.RouteData.Values["controller"].ToString() == "Socios" ? "active" : "")" asp-area="" asp-controller="Socios" asp-action="Index">Socios</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid p-0 main-content">
+        @if (ViewContext.RouteData.Values["action"].ToString() == "Index" && ViewContext.RouteData.Values["controller"].ToString() == "Home")
+        {
+            <!-- Carrusel para la página principal -->
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    <li data-slide-to="3"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="~/images/01.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/images/02.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/images/03.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="~/images/04.jpg" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <div class="carousel-caption d-flex justify-content-center align-items-center">
+                    <h1 class="title-shadow">Gimnasio 24</h1>
+                </div>
+            </div>
+        }
+        else
+        {
+            <!-- Contenido principal de la página -->
+            <main role="main" class="pb-3">
+                <div class="container">
+                    @RenderBody()
+                </div>
+            </main>
+        }
+    </div>
+
+    <!-- Pie de página -->
+    <footer class="footer text-muted">
+        <div class="container">
+            &copy; 2024 - Obligatorio Programacion III - Agustina Pellatón, Fiorella Geymonat y Sofía Laíno <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <!-- Enlaces a scripts -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,271 @@
+﻿body {
+    font-family: 'Raleway', sans-serif; /* Establece la fuente Raleway para todo el cuerpo */
+    margin: 0;
+    padding: 0;
+    background-color: #2E2533; /* Color de fondo oscuro */
+    color: #7D7D7D; /* Color del texto gris */
+}
+
+.text-center {
+    color: #986EDB; /* Color del texto centrado en lila */
+}
+
+.display-4 {
+    font-weight: 700; /* Texto en negrita */
+    color: #986EDB; /* Color del texto en lila */
+}
+
+a {
+    color: #986EDB; /* Color de los enlaces en lila */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+    a:hover {
+        text-decoration: underline; /* Subrayado al pasar el ratón sobre los enlaces */
+    }
+
+    a.text-primary:hover {
+        color: #FFFFFF !important; /* Color blanco al pasar el ratón sobre enlaces principales */
+        text-decoration: underline; /* Subrayado al pasar el ratón */
+    }
+
+.container {
+    max-width: 80%; /* Ancho máximo del 80% */
+    margin: auto; /* Centra el contenedor */
+    color: white; /* Texto blanco */
+}
+
+h1, h4 {
+    margin-top: 100px; /* Margen superior grande */
+    color: #986EDB; /* Color del texto en lila */
+}
+
+.table-container {
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el contenido que se desborda */
+    margin-top: 20px; /* Margen superior */
+}
+
+.table {
+    margin: 0;
+    width: 100%; /* Ancho completo de la tabla */
+}
+
+.btn-principal {
+    background-color: #986EDB; /* Color de fondo lila */
+    border-color: #986EDB; /* Color del borde lila */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+    .btn-principal:hover {
+        background-color: #4F325C; /* Color de fondo más oscuro al pasar el ratón */
+        border-color: #4F325C; /* Color del borde más oscuro al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-principal:focus, .btn-principal:active {
+        background-color: #7D7D7D; /* Color de fondo gris al enfocar o hacer clic */
+        border-color: #7D7D7D; /* Color del borde gris al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.btn-secondary {
+    background-color: #4F325C; /* Color de fondo más oscuro */
+    border-color: #4F325C; /* Color del borde más oscuro */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+    .btn-secondary:hover {
+        background-color: #7D7D7D; /* Color de fondo gris al pasar el ratón */
+        border-color: #7D7D7D; /* Color del borde gris al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-secondary:focus, .btn-secondary:active {
+        background-color: #986EDB; /* Color de fondo lila al enfocar o hacer clic */
+        border-color: #986EDB; /* Color del borde lila al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.text-primary {
+    color: #986EDB !important; /* Color del texto en lila */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+}
+
+    .text-primary:hover {
+        color: #FFFFFF !important; /* Color del texto en blanco al pasar el ratón */
+        text-decoration: underline !important; /* Subrayado al pasar el ratón */
+    }
+
+.form-row {
+    display: flex; /* Usar flexbox para la disposición */
+    justify-content: space-between; /* Espacio entre los elementos */
+    margin-bottom: 10px; /* Margen inferior */
+}
+
+.form-group {
+    margin-bottom: 10px; /* Margen inferior entre grupos de formulario */
+    flex: 1; /* Flexbox para que ocupe el espacio disponible */
+    margin-right: 10px; /* Margen derecho entre grupos */
+}
+
+    .form-group:last-child {
+        margin-right: 0; /* Sin margen derecho en el último grupo */
+    }
+
+.form-group-full-width {
+    flex: 0 0 100%; /* Ocupa todo el ancho del contenedor */
+}
+
+.action-buttons {
+    text-align: right; /* Alinea los botones de acción a la derecha */
+}
+
+footer {
+    background-color: #986EDB; /* Color de fondo del pie de página en lila */
+    color: #FFFFFF !important; /* Texto blanco */
+    padding: 10px 0; /* Relleno superior e inferior */
+    text-align: center; /* Texto centrado */
+    width: 100%; /* Ancho completo */
+    border-top: none; /* Sin borde superior */
+    position: absolute; /* Posición absoluta */
+    bottom: 0; /* Posicionado en la parte inferior */
+    left: 0; /* Posicionado en la izquierda */
+}
+
+/* Estilos para los dropdowns */
+.custom-select {
+    background-color: #FFFFFF; /* Color de fondo blanco */
+    color: #2E2533; /* Color del texto en color oscuro */
+    border: 1px solid #986EDB; /* Borde en lila */
+    padding: 8px; /* Relleno */
+    border-radius: 5px; /* Bordes redondeados */
+    appearance: none; /* Eliminar apariencia por defecto del navegador */
+    -webkit-appearance: none; /* Apariencia personalizada en WebKit */
+    -moz-appearance: none; /* Apariencia personalizada en Mozilla */
+    font-family: 'Raleway', sans-serif; /* Fuente Raleway */
+    font-weight: 600; /* Fuente en negrita */
+    position: relative;
+    padding-right: 24px; /* Espacio para la flecha del dropdown */
+    width: 100%; /* Ajustar el ancho del select */
+}
+
+    .custom-select:hover, .custom-select:focus {
+        background-color: #4F325C; /* Color de fondo oscuro al pasar el ratón */
+        color: #FFFFFF; /* Color del texto en blanco al pasar el ratón */
+        outline: none; /* Sin borde de enfoque */
+    }
+
+    .custom-select option {
+        background-color: #FFFFFF; /* Color de fondo blanco */
+        color: #2E2533; /* Color del texto en color oscuro */
+    }
+
+        .custom-select option:hover, .custom-select option:focus {
+            background-color: #4F325C; /* Color de fondo oscuro al pasar el ratón */
+            color: #FFFFFF; /* Color del texto en blanco al pasar el ratón */
+        }
+
+/* Para cambiar el color de la opción seleccionada */
+select option:checked {
+    background-color: #986EDB; /* Color de fondo lila */
+    color: white; /* Texto blanco */
+}
+
+.custom-select-wrapper {
+    position: relative;
+    display: inline-block;
+    width: 100%; /* Ancho completo del contenedor */
+}
+
+.custom-select-arrow {
+    position: absolute; /* Posición absoluta */
+    right: 10px; /* Posicionado a la derecha */
+    top: 50%; /* Posicionado en el centro vertical */
+    transform: translateY(-50%); /* Centro real */
+    pointer-events: none; /* Sin eventos del ratón */
+    color: #986EDB; /* Color de la flecha en lila */
+    font-size: 1rem; /* Tamaño de la fuente */
+}
+
+/* Ajustes adicionales para el formulario de filtrado */
+.form-inline .form-group {
+    margin-right: 15px; /* Margen derecho */
+    width: calc(50% - 15px); /* Ajustar el ancho de los grupos de formulario */
+}
+
+    .form-inline .form-group label {
+        margin-right: 5px; /* Margen derecho para las etiquetas */
+    }
+
+    .form-inline .form-group,
+    .form-inline .form-group label,
+    .form-inline .form-group select,
+    .form-inline .form-group input {
+        display: inline-block; /* Mostrar en línea */
+        vertical-align: middle; /* Alineación vertical en el centro */
+    }
+
+.form-inline input[type="submit"] {
+    margin-top: 10px; /* Margen superior */
+    width: 100%; /* Ancho completo */
+    max-width: 200px; /* Ancho máximo */
+}
+
+/* Ajustes adicionales para los botones */
+.btn {
+    margin: 5px 0; /* Margen superior e inferior */
+}
+
+/* Actualización del color del botón de eliminar */
+.btn-danger {
+    background-color: #4F325C; /* Color de fondo oscuro */
+    border-color: #4F325C; /* Color del borde oscuro */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+    .btn-danger:hover {
+        background-color: #7D7D7D; /* Color de fondo gris al pasar el ratón */
+        border-color: #7D7D7D; /* Color del borde gris al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-danger:focus, .btn-danger:active {
+        background-color: #7D7D7D; /* Color de fondo gris al enfocar o hacer clic */
+        border-color: #7D7D7D; /* Color del borde gris al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.text-center.mt-4 .btn-principal, .text-center.mt-4 .btn-secondary {
+    margin: 10px 5px; /* Margen para los botones */
+}
+
+.mt-4 {
+    margin-top: 1.5rem !important; /* Margen superior */
+}
+
+.d-inline {
+    display: inline-block !important; /* Mostrar en línea */
+}
+
+.mb-5 {
+    margin-bottom: 3rem !important; /* Margen inferior */
+}

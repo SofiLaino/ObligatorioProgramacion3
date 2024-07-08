@@ -1,0 +1,38 @@
+﻿@model ObligatorioProgramacion3.Models.RutinaSocio
+
+@{
+    ViewData["Title"] = "Editar Calificación"; // Establece el título de la página como "Editar Calificación"
+}
+
+<link rel="stylesheet" href="~/css/socios.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Editar Calificación</h4>
+<hr />
+<div class="container">
+    <div class="details-content">
+        @if (Model.Rutina != null && Model.Socio != null)
+        {
+            <h4>Rutina: @Model.Rutina.Nombre</h4> <!-- Muestra el nombre de la rutina -->
+            <h4>Socio: @Model.Socio.Nombre</h4> <!-- Muestra el nombre del socio -->
+        }
+        <form asp-action="EditarCalificacion">
+            <div class="form-group">
+                <label asp-for="Calificacion" class="control-label"></label>
+                <input asp-for="Calificacion" class="form-control" /> <!-- Campo de entrada para la calificación -->
+                <span asp-validation-for="Calificacion" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="IdSocio" /> <!-- Campo oculto para el ID del socio -->
+            <input type="hidden" asp-for="IdRutina" /> <!-- Campo oculto para el ID de la rutina -->
+            <div class="form-group text-center mt-4">
+                <input type="submit" value="Guardar" class="btn btn-principal btn-md" /> <!-- Botón para guardar la calificación -->
+                <a asp-action="Details" asp-route-id="@Model.IdSocio" class="btn btn-secondary btn-md ml-2">Volver</a> <!-- Enlace para volver a los detalles del socio -->
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial"); // Incluye los scripts de validación
+    }
+}

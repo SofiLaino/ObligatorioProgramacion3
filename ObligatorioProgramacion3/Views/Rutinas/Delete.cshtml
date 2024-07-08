@@ -1,0 +1,54 @@
+﻿@model ObligatorioProgramacion3.Models.Rutina
+
+@{
+    ViewData["Title"] = "Delete"; // Establece el título de la página en "Delete"
+}
+
+<link rel="stylesheet" href="~/css/rutinas.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Eliminar Rutina</h4>
+<hr />
+<div class="container">
+    <div class="details-content">
+        <h4>Rutina</h4>
+        <dl class="row">
+            <!-- Muestra el nombre de la rutina -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Nombre)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Nombre)
+            </dd>
+            <!-- Muestra la descripción de la rutina -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Descripcion)
+            </dd>
+            <!-- Muestra el promedio de calificación de la rutina -->
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.PromedioCalif)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.PromedioCalif)
+            </dd>
+            <!-- Muestra el tipo de la rutina -->
+            <dt class="col-sm-2">
+                Tipo
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TipoRutina.Nombre)
+            </dd>
+        </dl>
+        <form asp-action="Delete">
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group text-center">
+                <!-- Botón para eliminar la rutina -->
+                <input type="submit" value="Eliminar" class="btn btn-principal" />
+                <!-- Enlace para volver al índice de rutinas -->
+                <a asp-action="Index" class="btn btn-secondary ml-2">Volver</a>
+            </div>
+        </form>
+    </div>
+</div>

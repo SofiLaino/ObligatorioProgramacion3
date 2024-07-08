@@ -1,0 +1,28 @@
+﻿{
+  "iisSettings": {
+    "windowsAuthentication": false, // Desactiva la autenticación de Windows
+    "anonymousAuthentication": true, // Activa la autenticación anónima
+    "iisExpress": {
+      "applicationUrl": "http://localhost:38365", // URL de la aplicación para IIS Express
+      "sslPort": 44345 // Puerto SSL para IIS Express
+    }
+  },
+  "profiles": {
+    "ObligatorioProgramacion3": {
+      "commandName": "Project", // Indica que se ejecuta el proyecto directamente
+      "dotnetRunMessages": true, // Muestra mensajes de ejecución de .NET
+      "launchBrowser": true, // Lanza el navegador automáticamente
+      "applicationUrl": "https://localhost:7295;http://localhost:5278", // URLs para acceder a la aplicación
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development" // Configura el entorno de la aplicación como "Development"
+      }
+    },
+    "IIS Express": {
+      "commandName": "IISExpress", // Indica que se ejecuta usando IIS Express
+      "launchBrowser": true, // Lanza el navegador automáticamente
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development" // Configura el entorno de la aplicación como "Development"
+      }
+    }
+  }
+}

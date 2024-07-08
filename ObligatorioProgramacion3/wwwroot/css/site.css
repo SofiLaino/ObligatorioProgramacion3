@@ -1,0 +1,19 @@
+html {
+    font-size: 14px; /* Tamaño de fuente predeterminado para la mayoría de los dispositivos */
+}
+
+/* Aumenta el tamaño de la fuente en pantallas de al menos 768px de ancho */
+@media (min-width: 768px) {
+    html {
+        font-size: 16px; /* Tamaño de fuente para pantallas más grandes */
+    }
+}
+
+html {
+    position: relative; /* Posicionamiento relativo para permitir el uso de la posición absoluta dentro del mismo contenedor */
+    min-height: 100%; /* Asegura que el contenido ocupe al menos el 100% de la altura de la ventana */
+}
+
+body {
+    margin-bottom: 60px; /* Margen inferior para dar espacio a un pie de página fijo o contenido adicional */
+}

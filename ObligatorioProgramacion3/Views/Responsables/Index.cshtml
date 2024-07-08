@@ -1,0 +1,42 @@
+﻿@model IEnumerable<ObligatorioProgramacion3.Models.Responsable>
+
+@{
+    ViewData["Title"] = "Index"; // Establece el título de la página en "Index"
+}
+
+<link rel="stylesheet" href="~/css/responsables.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Responsables</h4> <!-- Encabezado principal de la página -->
+
+<p>
+    <a asp-action="Create" class="btn btn-principal">Agregar</a> <!-- Botón para agregar un nuevo responsable -->
+</p>
+<div class="table-container">
+    <table class="table table-striped table-dark">
+        <!-- Tabla con estilo oscuro -->
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nombre)</th> <!-- Encabezado de columna para "Nombre" -->
+                <th>@Html.DisplayNameFor(model => model.Apellido)</th> <!-- Encabezado de columna para "Apellido" -->
+                <th>@Html.DisplayNameFor(model => model.Telefono)</th> <!-- Encabezado de columna para "Telefono" -->
+                <th></th> <!-- Columna vacía para los botones de acción -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.Nombre)</td> <!-- Muestra el "Nombre" del responsable -->
+                    <td>@Html.DisplayFor(modelItem => item.Apellido)</td> <!-- Muestra el "Apellido" del responsable -->
+                    <td>@Html.DisplayFor(modelItem => item.Telefono)</td> <!-- Muestra el "Telefono" del responsable -->
+                    <td class="action-buttons">
+                        <!-- Botones de acción: Editar, Ver y Eliminar -->
+                        <a asp-action="Edit" asp-route-id="@item.Id" class="text-primary">Editar</a> |
+                        <a asp-action="Details" asp-route-id="@item.Id" class="text-primary">Ver</a> |
+                        <a asp-action="Delete" asp-route-id="@item.Id" class="text-primary">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

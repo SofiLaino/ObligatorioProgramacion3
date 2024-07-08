@@ -1,0 +1,48 @@
+﻿@model ObligatorioProgramacion3.Models.Responsable
+
+@{
+    ViewData["Title"] = "Edit"; // Establece el título de la página en "Edit"
+}
+
+<link rel="stylesheet" href="~/css/responsables.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Editar Responsable</h4> <!-- Encabezado principal de la página -->
+<hr />
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <!-- Formulario para editar el responsable -->
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div> <!-- Muestra los errores de validación -->
+            <input type="hidden" asp-for="Id" /> <!-- Campo oculto para el Id del responsable -->
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-6">
+                    <label asp-for="Nombre" class="control-label"></label> <!-- Etiqueta para el campo "Nombre" -->
+                    <input asp-for="Nombre" class="form-control" /> <!-- Campo de entrada para "Nombre" -->
+                    <span asp-validation-for="Nombre" class="text-danger"></span> <!-- Muestra los errores de validación para "Nombre" -->
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Apellido" class="control-label"></label> <!-- Etiqueta para el campo "Apellido" -->
+                    <input asp-for="Apellido" class="form-control" /> <!-- Campo de entrada para "Apellido" -->
+                    <span asp-validation-for="Apellido" class="text-danger"></span> <!-- Muestra los errores de validación para "Apellido" -->
+                </div>
+            </div>
+            <div class="form-row d-flex mb-2">
+                <div class="form-group col-md-12">
+                    <label asp-for="Telefono" class="control-label"></label> <!-- Etiqueta para el campo "Telefono" -->
+                    <input asp-for="Telefono" class="form-control" /> <!-- Campo de entrada para "Telefono" -->
+                    <span asp-validation-for="Telefono" class="text-danger"></span> <!-- Muestra los errores de validación para "Telefono" -->
+                </div>
+            </div>
+            <div class="form-group text-center mt-4">
+                <input type="submit" value="Guardar" class="btn btn-principal btn-md" /> <!-- Botón para guardar los cambios -->
+                <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a> <!-- Botón para volver al índice -->
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial"); // Renderiza los scripts de validación
+    }
+}

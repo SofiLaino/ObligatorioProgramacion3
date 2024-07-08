@@ -1,0 +1,177 @@
+﻿body {
+    font-family: 'Raleway', sans-serif; /* Establece la fuente Raleway para todo el cuerpo */
+    margin: 0;
+    padding: 0;
+    min-height: 100vh; /* Altura mínima del 100% de la ventana */
+    background-color: #2E2533; /* Color de fondo oscuro */
+    color: #7D7D7D; /* Color del texto gris */
+    overflow-x: hidden; /* Oculta el desbordamiento horizontal */
+    display: flex;
+    flex-direction: column; /* Configura el cuerpo como un contenedor flex vertical */
+}
+
+.text-center {
+    color: #986EDB; /* Color del texto centrado en lila */
+}
+
+.display-4 {
+    font-weight: 700; /* Texto en negrita */
+}
+
+a {
+    color: #986EDB; /* Color de los enlaces en lila */
+    text-decoration: none; /* Sin subrayado en los enlaces */
+}
+
+    a:hover {
+        text-decoration: underline; /* Subrayado al pasar el ratón sobre los enlaces */
+    }
+
+.navbar {
+    background-color: #2E2533; /* Color de fondo oscuro para la barra de navegación */
+    font-family: 'Raleway', sans-serif; /* Fuente Raleway */
+    font-weight: 600; /* Texto en negrita */
+    border-bottom: none; /* Sin borde inferior */
+}
+
+    .navbar .navbar-brand {
+        color: #FFFFFF !important; /* Color blanco para la marca de la barra de navegación */
+        font-weight: 700 !important; /* Texto en negrita */
+        text-decoration: none; /* Sin subrayado */
+    }
+
+    .navbar .nav-link {
+        color: #986EDB !important; /* Color lila para los enlaces de navegación */
+        font-weight: 600 !important; /* Texto en negrita */
+    }
+
+        .navbar .nav-link:hover {
+            color: #FFFFFF !important; /* Color blanco al pasar el ratón */
+            font-weight: 700 !important; /* Texto más negrita al pasar el ratón */
+        }
+
+        .navbar .nav-link.active {
+            color: #FFFFFF !important; /* Color blanco para el enlace activo */
+            font-weight: 700 !important; /* Texto en negrita */
+        }
+
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    color: white !important; /* Texto blanco en todos los contenedores */
+}
+
+.container {
+    max-width: 90%; /* Ancho máximo del 90% */
+    margin: auto; /* Centra el contenedor */
+}
+
+h1 {
+    margin-top: 100px; /* Margen superior grande */
+}
+
+footer {
+    background-color: #986EDB; /* Color de fondo del pie de página en lila */
+    color: #FFFFFF !important; /* Texto blanco */
+    padding: 10px 0; /* Relleno superior e inferior */
+    text-align: center; /* Texto centrado */
+    width: 100%; /* Ancho completo */
+    border-top: none; /* Sin borde superior */
+    position: absolute; /* Posición absoluta */
+    bottom: 0; /* Posicionado en la parte inferior */
+    left: 0; /* Posicionado en la izquierda */
+}
+
+.btn-principal {
+    background-color: #986EDB; /* Color de fondo lila */
+    border-color: #986EDB; /* Color del borde lila */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+}
+
+    .btn-principal:hover {
+        background-color: #4F325C; /* Color de fondo más oscuro al pasar el ratón */
+        border-color: #4F325C; /* Color del borde más oscuro al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-principal:focus, .btn-principal:active {
+        background-color: #7D7D7D; /* Color de fondo gris al enfocar o hacer clic */
+        border-color: #7D7D7D; /* Color del borde gris al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.btn-secondary {
+    background-color: #4F325C; /* Color de fondo más oscuro */
+    border-color: #4F325C; /* Color del borde más oscuro */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+}
+
+    .btn-secondary:hover {
+        background-color: #7D7D7D; /* Color de fondo gris al pasar el ratón */
+        border-color: #7D7D7D; /* Color del borde gris al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-secondary:focus, .btn-secondary:active {
+        background-color: #986EDB; /* Color de fondo lila al enfocar o hacer clic */
+        border-color: #986EDB; /* Color del borde lila al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.carousel-inner img {
+    width: 100%; /* Ancho completo de las imágenes del carrusel */
+    height: calc(100vh - 56px); /* Altura completa de la vista menos la altura de la barra de navegación */
+    object-fit: cover; /* Las imágenes cubren el contenedor */
+}
+
+.carousel-caption {
+    position: absolute; /* Posición absoluta */
+    top: 50%; /* Posicionado en el centro vertical */
+    left: 50%; /* Posicionado en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centro real */
+    text-align: center; /* Texto centrado */
+}
+
+.title-shadow {
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.9); /* Sombra de texto */
+    color: #986EDB; /* Color del texto en lila */
+    font-size: 4rem; /* Tamaño de la fuente */
+    font-weight: 700; /* Texto en negrita */
+    margin-top: 10px; /* Margen superior */
+}
+
+.main-content {
+    flex: 1; /* Flex-grow para ocupar el espacio disponible */
+}
+
+/* Ocultar flechas del carrusel */
+.carousel-control-prev,
+.carousel-control-next {
+    display: none;
+}
+
+/* Estilo de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 8px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #2E2533; /* Color de fondo de la pista de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #986EDB; /* Color del pulgar de la barra de desplazamiento */
+    border-radius: 4px; /* Bordes redondeados */
+}
+
+    ::-webkit-scrollbar-thumb:hover {
+        background: #4F325C; /* Color del pulgar al pasar el ratón */
+    }

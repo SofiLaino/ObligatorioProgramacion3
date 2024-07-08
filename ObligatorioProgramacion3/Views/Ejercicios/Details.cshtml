@@ -1,0 +1,43 @@
+﻿@model ObligatorioProgramacion3.Models.Ejercicio
+
+@{
+    ViewData["Title"] = "Details"; // Establece el título de la página en "Detalle"
+}
+
+<link rel="stylesheet" href="~/css/ejercicios.css" asp-append-version="true" />
+
+<h4 class="display-4 text-center">Detalle de Ejercicio</h4> <!-- Título de la sección -->
+<hr />
+<div class="container">
+    <h4>Ejercicio</h4> <!-- Subtítulo para la sección de detalles del ejercicio -->
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre) <!-- Etiqueta para el campo Nombre -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Nombre) <!-- Muestra el valor del campo Nombre -->
+        </dd>
+        <dt class="col-sm-2">
+            Maquina <!-- Etiqueta para el campo Maquina -->
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Maquina.Nombre) <!-- Muestra el nombre de la máquina asociada -->
+        </dd>
+        <dt class="col-sm-2">
+            Rutinas <!-- Etiqueta para el campo Rutinas -->
+        </dt>
+        <dd class="col-sm-10">
+            <ul>
+                <!-- Itera sobre las rutinas asociadas al ejercicio -->
+                @foreach (var rutinaEjercicio in Model.RutinasEjercicios) 
+                {
+                    <li>@Html.DisplayFor(modelItem => rutinaEjercicio.Rutina.Nombre)</li> <!-- Muestra el nombre de cada rutina -->
+                }
+            </ul>
+        </dd>
+    </dl>
+    <div class="form-group text-center mt-5">
+        <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn btn-principal btn-md">Editar</a> <!-- Botón para editar el ejercicio -->
+        <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a> <!-- Enlace para volver a la página de índice -->
+    </div>
+</div>

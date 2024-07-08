@@ -1,0 +1,216 @@
+﻿body {
+    font-family: 'Raleway', sans-serif; /* Fuente Raleway para todo el cuerpo */
+    margin: 0; /* Sin margen predeterminado */
+    padding: 0; /* Sin relleno predeterminado */
+    background-color: #2E2533; /* Color de fondo oscuro */
+    color: #7D7D7D; /* Color del texto gris */
+}
+
+.text-center {
+    color: #986EDB; /* Color del texto centrado en lila */
+}
+
+.display-4 {
+    font-weight: 700; /* Fuente en negrita */
+    color: #986EDB; /* Color del texto en lila */
+    margin-top: 1.5rem; /* Margen superior ajustado */
+}
+
+a {
+    color: #986EDB; /* Color de los enlaces en lila */
+    text-decoration: none; /* Sin subrayado para los enlaces */
+}
+
+    a:hover {
+        text-decoration: underline; /* Subrayado al pasar el ratón sobre los enlaces */
+    }
+
+    a.text-primary:hover {
+        color: #FFFFFF !important; /* Color blanco al pasar el ratón sobre enlaces principales */
+        text-decoration: underline; /* Subrayado al pasar el ratón */
+    }
+
+.container {
+    max-width: 80%; /* Ancho máximo del contenedor */
+    margin: auto; /* Centra el contenedor */
+    color: white; /* Texto blanco */
+}
+
+h1, h4 {
+    margin-top: 100px; /* Margen superior grande */
+    color: #986EDB; /* Color del texto en lila */
+}
+
+.details-content {
+    margin-top: -20px; /* Ajuste del margen superior para acercar el contenido al título */
+}
+
+.table-container {
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el contenido desbordante */
+    margin-top: 20px; /* Margen superior */
+}
+
+.table {
+    margin: 0; /* Sin margen para la tabla */
+    width: 100%; /* Ancho completo de la tabla */
+}
+
+.btn-principal {
+    background-color: #986EDB; /* Color de fondo lila */
+    border-color: #986EDB; /* Color del borde lila */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-right: 10px; /* Espacio entre botones */
+}
+
+    .btn-principal:hover {
+        background-color: #4F325C; /* Color de fondo más oscuro al pasar el ratón */
+        border-color: #4F325C; /* Color del borde más oscuro al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-principal:focus, .btn-principal:active {
+        background-color: #7D7D7D; /* Color de fondo gris al enfocar o hacer clic */
+        border-color: #7D7D7D; /* Color del borde gris al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.btn-secondary {
+    background-color: #4F325C; /* Color de fondo más oscuro */
+    border-color: #4F325C; /* Color del borde más oscuro */
+    color: white; /* Texto blanco */
+    font-size: 1rem; /* Tamaño de la fuente */
+    padding: 8px 16px; /* Relleno del botón */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+    .btn-secondary:hover {
+        background-color: #7D7D7D; /* Color de fondo gris al pasar el ratón */
+        border-color: #7D7D7D; /* Color del borde gris al pasar el ratón */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+    .btn-secondary:focus, .btn-secondary:active {
+        background-color: #986EDB; /* Color de fondo lila al enfocar o hacer clic */
+        border-color: #986EDB; /* Color del borde lila al enfocar o hacer clic */
+        color: white; /* Texto blanco */
+        text-decoration: none !important; /* Sin subrayado en el texto */
+    }
+
+.text-primary {
+    color: #986EDB !important; /* Color del texto en lila */
+    text-decoration: none !important; /* Sin subrayado en el texto */
+}
+
+    .text-primary:hover {
+        color: #FFFFFF !important; /* Color blanco al pasar el ratón */
+        text-decoration: underline !important; /* Subrayado al pasar el ratón */
+    }
+
+.form-row {
+    display: flex; /* Uso de Flexbox para disposición en línea */
+    justify-content: space-between; /* Espacio entre los elementos */
+    align-items: flex-end; /* Alinea los elementos al final */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Margen inferior */
+    flex: 1; /* Flexibilidad de los elementos */
+    margin-right: 10px; /* Margen derecho */
+}
+
+    .form-group:last-child {
+        margin-right: 0; /* Sin margen derecho para el último grupo */
+    }
+
+footer {
+    background-color: #986EDB; /* Color de fondo lila */
+    color: #FFFFFF !important; /* Texto blanco */
+    padding: 10px 0; /* Relleno superior e inferior */
+    text-align: center; /* Texto centrado */
+    width: 100%; /* Ancho completo */
+    border-top: none; /* Sin borde superior */
+    position: absolute; /* Posición absoluta */
+    bottom: 0; /* Pegado al fondo */
+    left: 0; /* Pegado a la izquierda */
+}
+
+/* Estilos para los dropdowns */
+.custom-select {
+    background-color: #FFFFFF; /* Color del fondo */
+    color: #2E2533; /* Color de la tipografía */
+    border: 1px solid #986EDB; /* Color del borde */
+    padding: 8px; /* Relleno interno */
+    border-radius: 5px; /* Bordes redondeados */
+    appearance: none; /* Eliminar apariencia por defecto del navegador */
+    -webkit-appearance: none; /* Compatibilidad con WebKit */
+    -moz-appearance: none; /* Compatibilidad con Mozilla */
+    font-family: 'Raleway', sans-serif; /* Fuente Raleway */
+    font-weight: 600; /* Peso de la fuente */
+    position: relative; /* Posicionamiento relativo */
+    padding-right: 24px; /* Espacio para la flecha */
+}
+
+    .custom-select:hover, .custom-select:focus {
+        background-color: #4F325C; /* Color al pasar el ratón */
+        color: #FFFFFF; /* Color de la tipografía al pasar el ratón */
+        outline: none; /* Sin borde de enfoque */
+    }
+
+    .custom-select option {
+        background-color: #FFFFFF; /* Color del fondo */
+        color: #2E2533; /* Color de la tipografía */
+    }
+
+        .custom-select option:hover, .custom-select option:focus {
+            background-color: #4F325C; /* Color al pasar el ratón */
+            color: #FFFFFF; /* Color de la tipografía al pasar el ratón */
+        }
+
+/* Para cambiar el color de la opción seleccionada */
+select option:checked {
+    background-color: #986EDB; /* Color de fondo lila */
+    color: white; /* Texto blanco */
+}
+
+.custom-select-wrapper {
+    position: relative; /* Posicionamiento relativo */
+    display: inline-block; /* Disposición en línea */
+    width: 100%; /* Ancho completo */
+}
+
+.custom-select-arrow {
+    position: absolute; /* Posición absoluta */
+    right: 10px; /* Alineado a la derecha */
+    top: 50%; /* Centrado verticalmente */
+    transform: translateY(-50%); /* Ajuste para centrar */
+    pointer-events: none; /* Desactivar eventos del ratón */
+    color: #986EDB; /* Color de la flecha */
+    font-size: 1rem; /* Tamaño de la fuente */
+}
+
+/* Estilos para los checkboxes */
+.form-check-input {
+    background-color: #2E2533; /* Color de fondo */
+    border: 1px solid #986EDB; /* Color del borde */
+    color: #FFFFFF; /* Texto blanco */
+}
+
+    .form-check-input:checked {
+        background-color: #986EDB; /* Color de fondo al estar seleccionado */
+        border-color: #986EDB; /* Color del borde al estar seleccionado */
+    }
+
+.form-check-label {
+    color: #FFFFFF; /* Color del texto */
+    margin-left: 8px; /* Margen izquierdo */
+}

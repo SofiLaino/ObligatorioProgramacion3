@@ -1,0 +1,75 @@
+﻿@model ObligatorioProgramacion3.Models.Maquina
+
+@{
+    ViewData["Title"] = "Edit"; // Establece el título de la página en "Edit"
+}
+
+<link rel="stylesheet" href="~/css/maquinas.css" asp-append-version="true" />
+
+<h1 class="display-4 text-center">Editar maquina</h1> <!-- Encabezado principal de la página -->
+
+<h4>Maquina</h4>
+<hr />
+<div class="row justify-content-center mb-5">
+    <!-- Añadido margen inferior para evitar que los botones sean cubiertos por el footer -->
+    <div class="col-md-8">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div> <!-- Muestra resumen de validación de errores -->
+            <input type="hidden" asp-for="Id" /> <!-- Campo oculto para el ID de la máquina -->
+            <div class="form-row d-flex mb-4">
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="Nombre" class="control-label"></label> <!-- Etiqueta para el campo "Nombre" -->
+                    <input asp-for="Nombre" class="form-control" /> <!-- Campo de entrada para "Nombre" -->
+                    <span asp-validation-for="Nombre" class="text-danger"></span> <!-- Mensaje de validación para "Nombre" -->
+                </div>
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="FechaCompra" class="control-label"></label> <!-- Etiqueta para el campo "FechaCompra" -->
+                    <input asp-for="FechaCompra" class="form-control" /> <!-- Campo de entrada para "FechaCompra" -->
+                    <span asp-validation-for="FechaCompra" class="text-danger"></span> <!-- Mensaje de validación para "FechaCompra" -->
+                </div>
+            </div>
+            <div class="form-row d-flex mb-4">
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="PrecioCompra" class="control-label"></label> <!-- Etiqueta para el campo "PrecioCompra" -->
+                    <input asp-for="PrecioCompra" class="form-control" /> <!-- Campo de entrada para "PrecioCompra" -->
+                    <span asp-validation-for="PrecioCompra" class="text-danger"></span> <!-- Mensaje de validación para "PrecioCompra" -->
+                </div>
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="VidaUtil" class="control-label"></label> <!-- Etiqueta para el campo "VidaUtil" -->
+                    <input asp-for="VidaUtil" class="form-control" /> <!-- Campo de entrada para "VidaUtil" -->
+                    <span asp-validation-for="VidaUtil" class="text-danger"></span> <!-- Mensaje de validación para "VidaUtil" -->
+                </div>
+            </div>
+
+            <div class="form-row d-flex mb-4">
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="LocalAsociadoId" class="control-label">Local Asociado</label> <!-- Etiqueta para el campo "LocalAsociadoId" -->
+                    <select asp-for="LocalAsociadoId" class="form-control custom-select" asp-items="ViewBag.Locales"></select> <!-- Dropdown para "LocalAsociadoId" -->
+                    <span asp-validation-for="LocalAsociadoId" class="text-danger"></span> <!-- Mensaje de validación para "LocalAsociadoId" -->
+                </div>
+                <div class="form-group col-md-6 mb-4">
+                    <label asp-for="TipoMaquinaId" class="control-label">Tipo Maquina</label> <!-- Etiqueta para el campo "TipoMaquinaId" -->
+                    <select asp-for="TipoMaquinaId" class="form-control custom-select" asp-items="ViewBag.TiposMaquina"></select> <!-- Dropdown para "TipoMaquinaId" -->
+                    <span asp-validation-for="TipoMaquinaId" class="text-danger"></span> <!-- Mensaje de validación para "TipoMaquinaId" -->
+                </div>
+            </div>
+            <div class="form-group form-check mb-4">
+                <label class="form-check-label d-flex align-items-center">
+                    <input class="form-check-input" asp-for="Disponible" /> <!-- Checkbox para "Disponible" -->
+                    <span class="ml-2">@Html.DisplayNameFor(model => model.Disponible)</span> <!-- Etiqueta para el campo "Disponible" -->
+                </label>
+            </div>
+
+            <div class="form-group text-center mt-5">
+                <input type="submit" value="Guardar" class="btn btn-principal btn-md" /> <!-- Botón para guardar los cambios -->
+                <a asp-action="Index" class="btn btn-secondary btn-md ml-2">Volver</a> <!-- Botón para volver al índice -->
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial"); // Scripts de validación
+    }
+}
